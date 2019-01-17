@@ -7,5 +7,5 @@ ACCOUNT="$(geth --datadir="usr/local/bin/build/master" account list | awk '$2=="
 #Start up local geth 
 echo Firing up engines
 geth --datadir="usr/local/bin/build/master" init usr/local/bin/genesisBlock.json
-geth --datadir="usr/local/bin/build/master" --etherbase "0x$ACCOUNT" --port 30302 --ipcdisable  --ws --wsport 8545 --wsorigins "*" --rpcport 8101 --mine --syncmode "full"  --networkid 1370 --unlock "0x$ACCOUNT" --password usr/local/bin/passkey.txt console
+geth --datadir="usr/local/bin/build/master" --etherbase "0x$ACCOUNT" --port 30302 --ipcdisable --wsaddr 0.0.0.0 --ws --wsport 8546 --wsorigins "*" --mine --syncmode "full"  --networkid 1370 --unlock "0x$ACCOUNT" --password usr/local/bin/passkey.txt console
 

@@ -15,4 +15,8 @@ RUN chmod +x usr/local/bin/geth-create.sh
 RUN chmod +x usr/local/bin/geth-master.sh
 RUN /bin/sh usr/local/bin/geth-create.sh
 
+
+
 ENTRYPOINT ["usr/local/bin/geth-master.sh"]
+
+EXPOSE 8545 8546 30303 30303/udp
