@@ -1,8 +1,8 @@
 #!/bin/sh
 
 echo Creating Accounts
-'test' > passkey.txt
-MASTER="$(geth --datadir usr/local/bin/build/master account new --password passkey.txt | sed 's/^[^{]*{\([^{}]*\)}.*/\1/')"
+'test' > usr/local/bin/passkey.txt
+MASTER="$(geth --datadir usr/local/bin/build/master account new --password usr/local/bin/passkey.txt | sed 's/^[^{]*{\([^{}]*\)}.*/\1/')"
 
 #Add masteraccount as Block Seeler (default local IP) and seeds with eth
 echo '{"config": {
@@ -14,7 +14,7 @@ echo '{"config": {
   "eip158Block": 3,
   "byzantiumBlock": 4,
   "clique": {
-    "period": 4,
+    "period": 0,
     "epoch": 30000
   }
   },

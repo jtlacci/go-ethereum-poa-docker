@@ -13,6 +13,6 @@ COPY --from=builder /go-ethereum/build/bin/geth /usr/local/bin/
 COPY geth /usr/local/bin
 RUN chmod +x usr/local/bin/geth-create.sh
 RUN chmod +x usr/local/bin/geth-master.sh
-CMD ["usr/local/bin/geth-create.sh"]
+RUN /bin/sh usr/local/bin/geth-create.sh
 
 ENTRYPOINT ["usr/local/bin/geth-master.sh"]
